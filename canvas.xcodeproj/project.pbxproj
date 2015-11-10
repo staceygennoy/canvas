@@ -12,6 +12,7 @@
 		01C8146D1BF19D6300580550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C8146B1BF19D6300580550 /* Main.storyboard */; };
 		01C8146F1BF19D6300580550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C8146E1BF19D6300580550 /* Assets.xcassets */; };
 		01C814721BF19D6300580550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C814701BF19D6300580550 /* LaunchScreen.storyboard */; };
+		01C8147A1BF19DF200580550 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C814791BF19DF200580550 /* CanvasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		01C8146E1BF19D6300580550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01C814711BF19D6300580550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01C814731BF19D6300580550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C814791BF19DF200580550 /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				01C814671BF19D6300580550 /* AppDelegate.swift */,
 				01C814691BF19D6300580550 /* ViewController.swift */,
 				01C8146B1BF19D6300580550 /* Main.storyboard */,
+				01C814791BF19DF200580550 /* CanvasViewController.swift */,
 				01C8146E1BF19D6300580550 /* Assets.xcassets */,
 				01C814701BF19D6300580550 /* LaunchScreen.storyboard */,
 				01C814731BF19D6300580550 /* Info.plist */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C8146A1BF19D6300580550 /* ViewController.swift in Sources */,
+				01C8147A1BF19DF200580550 /* CanvasViewController.swift in Sources */,
 				01C814681BF19D6300580550 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
