@@ -10,12 +10,27 @@ import UIKit
 
 class CanvasViewController: UIViewController {
 
+    @IBOutlet weak var trayView: UIView!
+    
+    //create a "global" variable to store the original center of the trayView
+    var trayOriginalCenter: CGPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    func onCustomTap(tapGestureRecognizer: UITapGestureRecognizer) {
+        var point = tapGestureRecognizer.locationInView(view)
+        
+        // User tapped at the point above. Do something with that if you want.
+    }
 
+    @IBAction func onTrayPanGesture(sender: UIPanGestureRecognizer) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
