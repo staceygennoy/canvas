@@ -56,7 +56,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="trayView" destination="aEJ-jX-BLx" id="gYY-oG-qEN"/>
+                        <outlet property="trayView" destination="aEJ-jX-BLx" id="3WX-hn-dtZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
