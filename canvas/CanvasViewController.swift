@@ -20,6 +20,8 @@ class CanvasViewController: UIViewController {
     var trayUp: CGPoint!
     var trayDown: CGPoint!
     
+    var newlyCreatedFace: UIImageView!
+    var newlyCreatedFaceOriginalCenter: CGPoint!
     
     
     override func viewDidLoad() {
@@ -35,6 +37,7 @@ class CanvasViewController: UIViewController {
     @IBAction func onTrayPanGesture(sender: UIPanGestureRecognizer) {
         let velocity = sender.velocityInView(view)
         let translation = sender.translationInView(view)
+        
         
         if sender.state == UIGestureRecognizerState.Began {
             trayOriginalCenter = trayView.center
@@ -64,6 +67,39 @@ class CanvasViewController: UIViewController {
             }
         }
         // add code to pan when the tray is panned
+        
+    }
+    
+    @IBAction func didPanFace(sender: UIPanGestureRecognizer) {
+        let translation = sender.translationInView(view)
+        
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            print("Face began")
+            let imageView = sender.view as! UIImageView
+            newlyCreatedFace = UIImageView(image: imageView.image)
+            view.addSubview(newlyCreatedFace)
+            newlyCreatedFace.center = imageView.center
+            newlyCreatedFace.center.y += trayView.frame.origin.y
+            
+            //setting original position, beginning position
+            newlyCreatedFaceOriginalCenter = newlyCreatedFace.center
+            
+            newlyCreatedFace.transform = CGAffineTransformMakeScale(1.5, 1.5)
+           
+            
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            print("Face changed")
+            // pan the postion to the newly created state
+            newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y)
+
+
+            
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            print("Face ended")
+            newlyCreatedFace.transform = CGAffineTransformMakeScale(1, 1)
+        }
+
         
     }
     
