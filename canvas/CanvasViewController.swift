@@ -24,6 +24,9 @@ class CanvasViewController: UIViewController {
     var newlyCreatedFaceOriginalCenter: CGPoint!
     
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,6 +89,11 @@ class CanvasViewController: UIViewController {
             newlyCreatedFaceOriginalCenter = newlyCreatedFace.center
             
             newlyCreatedFace.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            
+            let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "onCustomPan:")
+            
+            newlyCreatedFace.userInteractionEnabled = true
+            newlyCreatedFace.addGestureRecognizer(panGestureRecognizer)
            
             
         } else if sender.state == UIGestureRecognizerState.Changed {
@@ -101,6 +109,33 @@ class CanvasViewController: UIViewController {
         }
 
         
+    }
+    
+    func onCustomPan(sender: UIPanGestureRecognizer) {
+        let translation = sender.translationInView(view)
+        
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            print("Face began")
+            newlyCreatedFace = sender.view as! UIImageView
+            
+            //setting original position, beginning position
+            newlyCreatedFaceOriginalCenter = newlyCreatedFace.center
+            
+            newlyCreatedFace.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            
+            
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            print("Face changed")
+            // pan the postion to the newly created state
+            newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y)
+            
+            
+            
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            print("Face ended")
+            newlyCreatedFace.transform = CGAffineTransformMakeScale(1, 1)
+        }
     }
     
     override func didReceiveMemoryWarning() {
